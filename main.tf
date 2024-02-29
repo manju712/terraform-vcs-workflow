@@ -90,7 +90,7 @@ module "ec2_instance" {
   version                = "5.6.0"
   name                   = "public-module-ec2"
   ami                    = data.aws_ami.root_module_ami.id
-  instance_type          = "t3.micro"
+  instance_type          = "t3.small"
   subnet_id              = module.vpc.public_subnets[0]
   vpc_security_group_ids = [module.security_group.security_group_id]
   key_name               = aws_key_pair.root_module_kp.id
